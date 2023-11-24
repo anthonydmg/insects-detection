@@ -60,6 +60,7 @@ mask_largest_form = np.zeros_like(mask)
 
 mask_largest_form = cv2.drawContours(image = mask_largest_form.copy(),  contours= [corners], contourIdx= -1, color= 255, thickness=cv2.FILLED)
 
+## usar mejor binary_fill_holes para cerrar la forma
 mask_largest_form = cv2.dilate(mask_largest_form, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)), iterations=3)
 
 
